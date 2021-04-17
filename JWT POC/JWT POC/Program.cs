@@ -27,8 +27,8 @@ namespace JWT_POC
             //using manual way
             var payload = new Dictionary<string, object>
             {
-                { "Rishni", "Rishni tofani chhe" },
-                { "Dhukdi","Dhukdi maha tofani chhe" },
+                { "Name", "JWT token poc" },
+                { "Description","doing jwt token poc to create and validate jwt token" },
                 { "exp", DateTimeOffset.UtcNow.AddMinutes(2) }
             };
 
