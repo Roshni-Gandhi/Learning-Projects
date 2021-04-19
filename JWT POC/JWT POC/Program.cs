@@ -12,15 +12,31 @@ namespace JWT_POC
 {
     class Program
     {
-        public static void Main(string[] args)
+
+        public static void Main(string[] operation)
         {
-            //CreateJWTToken();
-            string token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJSaXNobmkiOiJSaXNobmkgdG9mYW5pIGNoaGUiLCJEaHVrZGkiOiJEaHVrZGkgbWFoYSB0b2ZhbmkgY2hoZSIsImV4cCI6MTYxODY0MzU2OSwiaWF0IjoxNjE4NjQzNDQ5fQ.vjoormcrte8xZApLsBdtvdoI3Z89pnGt1Ja5jZfSSOA";
-            ValidateJWTToken(token);
+            string token = "";
+            operation = operation.Length == 0 ? new string[] { "validate" } : operation; 
+            if (operation.FirstOrDefault().ToLower() == "create")
+            {
+                token = CreateJWTToken();
+                Console.WriteLine(token);
+            }
+            else if (operation.FirstOrDefault().ToLower() == "validate")
+            {
+                //token = CreateJWTToken();
+                string json = ValidateJWTToken(operation[1]);
+                Console.WriteLine(json);
+
+            }
             Console.ReadLine();
+            //CreateJWTToken();
+            //string token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJSaXNobmkiOiJSaXNobmkgdG9mYW5pIGNoaGUiLCJEaHVrZGkiOiJEaHVrZGkgbWFoYSB0b2ZhbmkgY2hoZSIsImV4cCI6MTYxODY0MzU2OSwiaWF0IjoxNjE4NjQzNDQ5fQ.vjoormcrte8xZApLsBdtvdoI3Z89pnGt1Ja5jZfSSOA";
+            //ValidateJWTToken(token);
+            //Console.ReadLine();
         }
 
-        static void CreateJWTToken()
+        static string CreateJWTToken()
         {
             const string secret = "4rwegrthdr574rgFEvdbtdDSREGB57hfhg";
 
@@ -29,7 +45,7 @@ namespace JWT_POC
             {
                 { "Name", "JWT token poc" },
                 { "Description","doing jwt token poc to create and validate jwt token" },
-                { "exp", DateTimeOffset.UtcNow.AddMinutes(2) }
+                { "exp", DateTimeOffset.UtcNow.AddMinutes(2).ToUnixTimeSeconds() }
             };
 
             //selects the algorithm to sign the token
@@ -56,41 +72,51 @@ namespace JWT_POC
             //          .AddClaim("iat",DateTimeOffset.UtcNow.ToUnixTimeSeconds())
             //          .Encode();
 
-            Console.WriteLine(token);
-
+            //Console.WriteLine(token);
+            return token;
         }
-        static void ValidateJWTToken(string token)
+        static string ValidateJWTToken(string token)
         {
             const string secret = "4rwegrthdr574rgFEvdbtdDSREGB57hfhg";
 
-            //using fluent api
-            //var json = JwtBuilder.Create()
-            //         .WithAlgorithm(new HMACSHA256Algorithm()) // symmetric
-            //         .WithSecret(secret)
-            //         //.MustVerifySignature()
-            //         .Decode(token);
+            try
+            {
+                //using fluent api
+                var json = JwtBuilder.Create()
+                         .WithAlgorithm(new HMACSHA256Algorithm()) // symmetric
+                         .WithSecret(secret)
+                         .MustVerifySignature()
+                         .Decode(token);
 
-            //as the token will decode and convert into json so of course we need json serializer
-            IJsonSerializer serializer = new JsonNetSerializer();
+                ////as the token will decode and convert into json so of course we need json serializer
+                //IJsonSerializer serializer = new JsonNetSerializer();
 
-            //date time provider to validate the token whether its not expired
-            var provider = new UtcDateTimeProvider();
+                ////date time provider to validate the token whether its not expired
+                //var provider = new UtcDateTimeProvider();
 
-            //validator to validate the token with two things serializer and provider
-            IJwtValidator validator = new JwtValidator(serializer, provider);
+                ////validator to validate the token with two things serializer and provider
+                //IJwtValidator validator = new JwtValidator(serializer, provider);
 
-            //api url encoder
-            IBase64UrlEncoder urlEncoder = new JwtBase64UrlEncoder();
+                ////api url encoder
+                //IBase64UrlEncoder urlEncoder = new JwtBase64UrlEncoder();
+
+                ////algorith to validate the token is generated with the same algorithm or not
+                //IJwtAlgorithm algorithm = new HMACSHA256Algorithm();
+
+                ////decoder will have all the things needed to parse the token 
+                //IJwtDecoder decoder = new JwtDecoder(serializer, validator, urlEncoder, algorithm);
+
+                ////Decode method will decode the actual token, will verify the time, algorithma aand secret key
+                //var json = decoder.Decode(token, secret, verify: true);
+                return json;
+            }
+            catch (Exception ex)
+            {
+                //Console.WriteLine(ex.ToString());
+                return ex.Message;
+            }
+            //Console.WriteLine(json);
             
-            //algorith to validate the token is generated with the same algorithm or not
-            IJwtAlgorithm algorithm = new HMACSHA256Algorithm(); 
-
-            //decoder will have all the things needed to parse the token 
-            IJwtDecoder decoder = new JwtDecoder(serializer, validator, urlEncoder, algorithm);
-
-            //Decode method will decode the actual token, will verify the time, algorithma aand secret key
-            var json = decoder.Decode(token, secret, verify: true);
-            Console.WriteLine(json);
         }
 
 
