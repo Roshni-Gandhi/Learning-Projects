@@ -11,3 +11,16 @@ D:\Rish\Learning Projeccts\JWT POC\JWT POC\obj\Debug\JWT POC.csproj.CoreCompileI
 D:\Rish\Learning Projeccts\JWT POC\JWT POC\obj\Debug\JWT POC.csproj.CopyComplete
 D:\Rish\Learning Projeccts\JWT POC\JWT POC\obj\Debug\JWT POC.exe
 D:\Rish\Learning Projeccts\JWT POC\JWT POC\obj\Debug\JWT POC.pdb
+D:\Rish\RishGit\Learning-Projects\JWT POC\JWT POC\bin\Debug\JWT POC.exe.config
+D:\Rish\RishGit\Learning-Projects\JWT POC\JWT POC\bin\Debug\JWT POC.exe
+D:\Rish\RishGit\Learning-Projects\JWT POC\JWT POC\bin\Debug\JWT POC.pdb
+D:\Rish\RishGit\Learning-Projects\JWT POC\JWT POC\bin\Debug\JWT.dll
+D:\Rish\RishGit\Learning-Projects\JWT POC\JWT POC\bin\Debug\Newtonsoft.Json.dll
+D:\Rish\RishGit\Learning-Projects\JWT POC\JWT POC\bin\Debug\JWT.pdb
+D:\Rish\RishGit\Learning-Projects\JWT POC\JWT POC\bin\Debug\JWT.xml
+D:\Rish\RishGit\Learning-Projects\JWT POC\JWT POC\bin\Debug\Newtonsoft.Json.xml
+D:\Rish\RishGit\Learning-Projects\JWT POC\JWT POC\obj\Debug\JWT POC.csprojAssemblyReference.cache
+D:\Rish\RishGit\Learning-Projects\JWT POC\JWT POC\obj\Debug\JWT POC.csproj.CoreCompileInputs.cache
+D:\Rish\RishGit\Learning-Projects\JWT POC\JWT POC\obj\Debug\JWT POC.csproj.CopyComplete
+D:\Rish\RishGit\Learning-Projects\JWT POC\JWT POC\obj\Debug\JWT POC.exe
+D:\Rish\RishGit\Learning-Projects\JWT POC\JWT POC\obj\Debug\JWT POC.pdb

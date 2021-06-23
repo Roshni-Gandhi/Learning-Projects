@@ -1,0 +1,17 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/JWT POC/HackerRank/bin/Debug
+/JWT POC/HackerRank/obj
+/JWT POC/.vs/POC/v16/.suo
+/JWT POC/JWT POC/bin/Release
+/.vs/VSWorkspaceState.json
+/JWT POC/AsyncAwait/bin/Debug
+/JWT POC/AsyncAwait/obj
+/JWT POC/DependencyInjection/obj
+/JWT POC/JWT POC/obj/Release
+/JWT POC/LinkedList/bin/Debug
+/JWT POC/LinkedList/obj
+/JWT POC/MonkAndRotation/bin
+/JWT POC/MonkAndRotation/obj
