@@ -18,12 +18,12 @@ namespace AsyncAwait2
 
             Task<Egg> eggTask = FryEggs(2);
             Task<Bacon> baconTask = FryBacon(3);
-            Task<Toast> toastTask =ToastBread(2);
+            Task<Toast> toastTask = MakeToastWithButterAndJamAsync(2);
 
             Toast toast = await toastTask;
-            ApplyButter(toast);
-            ApplyJam(toast);
-            Console.WriteLine("toast is ready");
+            //ApplyButter(toast);
+            //ApplyJam(toast);
+            //Console.WriteLine("toast is ready");
 
 
             Egg egg = await eggTask;
@@ -97,6 +97,15 @@ namespace AsyncAwait2
         {
             Console.WriteLine("Pouring coffee");
             return new Coffee();
+        }
+
+        private static async Task<Toast> MakeToastWithButterAndJamAsync(int number)
+        {
+            var toast = await ToastBread(number);
+            ApplyButter(toast);
+            ApplyJam(toast);
+
+            return toast;
         }
     }
     class Coffee
