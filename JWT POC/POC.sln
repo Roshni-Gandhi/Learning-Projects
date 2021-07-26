@@ -15,6 +15,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DependencyInjection", "Depe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwait", "AsyncAwait\AsyncAwait.csproj", "{AB546A37-B721-4C0C-B1E0-7D547A89D89F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AsyncAwait2", "AsyncAwait2\AsyncAwait2.csproj", "{526E2599-C924-4B4B-942D-5695B915EAD8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{AB546A37-B721-4C0C-B1E0-7D547A89D89F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AB546A37-B721-4C0C-B1E0-7D547A89D89F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AB546A37-B721-4C0C-B1E0-7D547A89D89F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{526E2599-C924-4B4B-942D-5695B915EAD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{526E2599-C924-4B4B-942D-5695B915EAD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{526E2599-C924-4B4B-942D-5695B915EAD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{526E2599-C924-4B4B-942D-5695B915EAD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
